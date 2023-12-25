@@ -1,3 +1,9 @@
+import {
+  backendURL,
+  successNotification,
+  errorNotification,
+} from "../utils/utils.js";
+
 // Login
 const form_login = document.getElementById("form_login");
 
@@ -13,7 +19,7 @@ form_login.onsubmit = async (e) => {
 
   const formData = new FormData(form_login);
 
-  const response = await fetch("http://webapp-backend.test/api/login", {
+  const response = await fetch(backendURL + "/api/login", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -27,10 +33,10 @@ form_login.onsubmit = async (e) => {
     data = await response.json();
     localStorage.setItem("token", data.token);
     localStorage.setItem("role", data.user.role);
-
+    successNotification("Successfully logged in account.");
     window.location.pathname = "/index.html";
   } else {
     data = await response.json();
-    throw new Error(data.message);
+    errorNotification(json.message, 5);
   }
 };

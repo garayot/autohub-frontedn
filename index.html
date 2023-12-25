@@ -36,6 +36,7 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
+    <script></script>
   </head>
 
   <body>
@@ -57,7 +58,75 @@
             </li>
             <li><a class="nav-link scrollto" href="#team">Team</a></li>
             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-            <li><a class="nav-link scrollto" href="login.html">Log-in</a></li>
+            <li>
+              <a
+                id="login-btn"
+                class="btn btn-secondary"
+                href="login.html"
+                role="button"
+                >LOGIN</a
+              >
+            </li>
+            <!-- <button class="btn btn-secondary" id="login-btn" href="login.html">
+              Login
+            </button> -->
+
+            <div id="dropdown-menu" class="dropdown" style="display: none">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-three-dots-vertical"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-person-circle"></i> Profile</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-cart-check-fill"></i> Orders</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-box-arrow-right"></i> Logout</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-three-dots-vertical"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-person-circle"></i> Profile</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-cart-check-fill"></i> Orders</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-box-arrow-right"></i> Logout</a
+                  >
+                </li>
+              </ul>
+            </div> -->
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
@@ -931,5 +1000,6 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth/na.js"></script>
   </body>
 </html>
