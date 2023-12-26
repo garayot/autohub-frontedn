@@ -61,19 +61,16 @@
             <li>
               <a
                 id="login-btn"
-                class="btn btn-secondary"
+                class="btn btn-secondary mx-4 justify-content-center"
                 href="login.html"
                 role="button"
                 >LOGIN</a
               >
             </li>
-            <!-- <button class="btn btn-secondary" id="login-btn" href="login.html">
-              Login
-            </button> -->
 
             <div id="dropdown-menu" class="dropdown" style="display: none">
               <button
-                class="btn btn-secondary dropdown-toggle"
+                class="btn btn-secondary dropdown-toggle mx-4"
                 type="button"
                 id="dropdownMenuButton"
                 data-bs-toggle="dropdown"
@@ -83,7 +80,7 @@
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <li>
-                  <a class="dropdown-item" href="#"
+                  <a class="dropdown-item" href="profile.html"
                     ><i class="bi bi-person-circle"></i> Profile</a
                   >
                 </li>
@@ -99,34 +96,6 @@
                 </li>
               </ul>
             </div>
-            <!-- <div class="dropdown">
-              <button
-                class="btn btn-secondary dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <i class="bi bi-three-dots-vertical"></i>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li>
-                  <a class="dropdown-item" href="#"
-                    ><i class="bi bi-person-circle"></i> Profile</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    ><i class="bi bi-cart-check-fill"></i> Orders</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    ><i class="bi bi-box-arrow-right"></i> Logout</a
-                  >
-                </li>
-              </ul>
-            </div> -->
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
@@ -153,7 +122,9 @@
               alike.
             </h2>
             <div class="animated fadeInLeft delay-3s">
-              <a href="login.html" class="btn-get-started">BUY A CAR</a>
+              <a href="#portfolio" class="btn-get-started scrollto"
+                >BUY A CAR</a
+              >
               <a href="#gallery" class="btn-get-started scrollto"
                 >VIEW GALLERY</a
               >
@@ -350,204 +321,22 @@
             </p>
           </div>
 
-          <div class="container">
+          <!-- <div class="container">
             <div class="row">
-              <!-- Product Cards -->
-              <!-- Product 1 -->
+             
               <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                  <img
-                    class="card-img-top"
-                    src="assets/img/product/portfolio-1.jpg"
-                    alt="Product 1"
+                  <img class="card-img-top"
+                    <img src="${backendURL}/storage/${element.image1}" width="100%" height="225px">
                   />
                   <div class="card-body">
-                    <h4 class="card-title">Product 1</h4>
-                    <p class="card-text">car</p>
+                    <h5 class="card-title">${element.make}$ {element.model_name}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">${element.model_year}</h6>
+                    <p class="card-text">${element.description}</p>
                   </div>
                   <div class="card-footer">
                     <button
                       class="btn btn-primary"
-                      data-toggle="modal"
-                      data-target="#productModal1"
-                    >
-                      View Details
-                    </button>
-                    <button class="btn btn-secondary">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Repeat the above card structure for Products 2 to 8 -->
-
-              <!-- Product 2 -->
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                  <img
-                    class="card-img-top"
-                    src="assets/img/product/portfolio-2.jpg"
-                    alt="Product 2"
-                  />
-                  <div class="card-body">
-                    <h4 class="card-title">Product 2</h4>
-                    <p class="card-text">car</p>
-                  </div>
-                  <div class="card-footer">
-                    <button
-                      class="btn btn-primary"
-                      data-toggle="modal"
-                      data-target="#productModal2"
-                    >
-                      View Details
-                    </button>
-                    <button class="btn btn-secondary">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Product 3 -->
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                  <img
-                    class="card-img-top"
-                    src="assets/img/product/portfolio-3.jpg"
-                    alt="Product 3"
-                  />
-                  <div class="card-body">
-                    <h4 class="card-title">Product 3</h4>
-                    <p class="card-text">car</p>
-                  </div>
-                  <div class="card-footer">
-                    <button
-                      class="btn btn-primary"
-                      data-toggle="modal"
-                      data-target="#productModal3"
-                    >
-                      View Details
-                    </button>
-                    <button class="btn btn-secondary">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Product 4 -->
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                  <img
-                    class="card-img-top"
-                    src="assets/img/product/portfolio-4.jpg"
-                    alt="Product 4"
-                  />
-                  <div class="card-body">
-                    <h4 class="card-title">Product 4</h4>
-                    <p class="card-text">car/p></p>
-                  </div>
-
-                  <div class="card-footer">
-                    <button
-                      class="btn btn-primary"
-                      data-toggle="modal"
-                      data-target="#productModal4"
-                    >
-                      View Details
-                    </button>
-                    <button class="btn btn-secondary">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Product 5 -->
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                  <img
-                    class="card-img-top"
-                    src="assets/img/product/portfolio-5.jpg"
-                    alt="Product 5"
-                  />
-                  <div class="card-body">
-                    <h4 class="card-title">Product 5</h4>
-                    <p class="card-text">car</p>
-                  </div>
-                  <div class="card-footer">
-                    <button
-                      class="btn btn-primary"
-                      data-toggle="modal"
-                      data-target="#productModal5"
-                    >
-                      View Details
-                    </button>
-                    <button class="btn btn-secondary">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Product 6 -->
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                  <img
-                    class="card-img-top"
-                    src="assets/img/product/portfolio-6.jpg"
-                    alt="Product 6"
-                  />
-                  <div class="card-body">
-                    <h4 class="card-title">Product 6</h4>
-                    <p class="card-text">car</p>
-                  </div>
-                  <div class="card-footer">
-                    <button
-                      class="btn btn-primary"
-                      data-toggle="modal"
-                      data-target="#productModal6"
-                    >
-                      View Details
-                    </button>
-                    <button class="btn btn-secondary">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Product 7 -->
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                  <img
-                    class="card-img-top"
-                    src="assets/img/product/portfolio-7.jpg"
-                    alt="Product 7"
-                  />
-                  <div class="card-body">
-                    <h4 class="card-title">Product 7</h4>
-                    <p class="card-text">car</p>
-                  </div>
-                  <div class="card-footer">
-                    <button
-                      class="btn btn-primary"
-                      data-toggle="modal"
-                      data-target="#productModal7"
-                    >
-                      View Details
-                    </button>
-                    <button class="btn btn-secondary">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Product 8 -->
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                  <img
-                    class="card-img-top"
-                    src="assets/img/product/portfolio-8.jpg"
-                    alt="Product 8"
-                  />
-                  <div class="card-body">
-                    <h4 class="card-title">Product 8</h4>
-                    <p class="card-text">car</p>
-                  </div>
-                  <div class="card-footer">
-                    <button
-                      class="btn btn-primary"
-                      data-toggle="modal"
-                      data-target="#productModal8"
                     >
                       View Details
                     </button>
@@ -556,7 +345,41 @@
                 </div>
               </div>
             </div>
+          </div> -->
+          <form id="form_search">
+            <div class="row d-flex justify-content-center">
+              <div class="col-sm-4 mb-1">
+                <input
+                  class="form-control"
+                  type="text"
+                  name="keyword"
+                  placeholder="Look for Cars"
+                />
+              </div>
+              <div class="col-sm-2 d-flex justify-content-center mb-1">
+                <button class="btn btn-primary w-100" type="submit">
+                  Search
+                </button>
+              </div>
+            </div>
+          </form>
+          <div class="container d-flex justify-content-center" id="get_data">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <b class="ms-2">Loading Data...</b>
           </div>
+          </div>
+          
+          
+
+          <!-- Pagination of All Data -->
+          <div class="d-flex justify-content-center">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination" id="get_pagination"></ul>
+            </nav>
+          </div>
+        </div>
         </div>
       </section>
 
@@ -1002,5 +825,7 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/auth/na.js"></script>
     <script type="module" src="assets/js/auth/logout.js" defer></script>
+    <script type="module" src="assets/js/system/units.js" defer></script>
+
   </body>
 </html>

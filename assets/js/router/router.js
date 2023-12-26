@@ -10,13 +10,13 @@ function setRouter() {
       break;
 
     // If you are not logged in you cant access dashboard pages; redirect to /
-    // case "/dashboard.html":
-    //   // case "/presentation.html":
-    //   // case "/slides.html":
-    //   if (!localStorage.getItem("token")) {
-    //     window.location.pathname = "/";
-    //   }
-    //   break;
+    case "/profile.html":
+      // case "/presentation.html":
+      // case "/slides.html":
+      if (!localStorage.getItem("token")) {
+        window.location.pathname = "/index.html";
+      }
+      break;
 
     // For Admin Users only; redirect to /dashboard
     // case "/users.html":

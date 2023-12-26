@@ -4,8 +4,9 @@ import { setRouter } from "../router/router.js";
 setRouter();
 
 // Backend URL
-const backendURL = "http://webapp-backend.test";
-
+const backendURL =
+  "https://ff81-2001-4455-638-9b00-9cc1-e579-c2a8-9955.ngrok-free.app/webapp-backend/public";
+// "http://webapp-backend.test";
 // Get Logged User Profile
 async function getLoggedUser() {
   // Access User Profile API Endpoint
