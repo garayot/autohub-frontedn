@@ -13,7 +13,54 @@ import {
 // showNavAdminPages();
 
 // Get All Data
-getDatas();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const paginateBtns = document.querySelectorAll("#btn_paginate");
+
+  if (paginateBtns) {
+    paginateBtns.forEach((element) => {
+      element.addEventListener("click", pageAction);
+    });
+  }
+});
+
+async function addOrder(event) {
+  const carId = event.target.closest("[data-id]").dataset.id;
+
+  const userId = localStorage.getItem("id");
+
+  const today = new Date().toISOString().split("T")[0];
+
+  const data = {
+    customer_ID: userId,
+    car_ID: carId,
+    date: today,
+    status: "incomplete",
+    // sales_total: 0, // sales total can be updated later
+  };
+
+  const response = await fetch(backendURL + "/api/orders", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    if (response.status === 422) {
+      const errors = await response.json();
+      console.error(errors);
+    } else {
+      console.error("Error adding order");
+    }
+    return;
+  }
+
+  const order = await response.json();
+  console.log("Order added successfully", order);
+}
 
 async function getDatas(url = "", keyword = "") {
   // Add Loading if pagination or search is used; Remove if its not needed
@@ -85,7 +132,7 @@ async function getDatas(url = "", keyword = "") {
 
             </button>
 
-            <button class="btn btn-secondary">Add to Cart</button>
+            <button id="add_order" class="btn btn-secondary">Order Now</button>
 
           </div>
 
@@ -99,6 +146,7 @@ async function getDatas(url = "", keyword = "") {
          </div>           
                       `;
       });
+
       // Use the container to display the fetch data
       document.getElementById("get_data").innerHTML = container;
 
@@ -124,6 +172,8 @@ async function getDatas(url = "", keyword = "") {
       document.querySelectorAll("#btn_paginate").forEach((element) => {
         element.addEventListener("click", pageAction);
       });
+
+      document.getElementById("add_order").addEventListener("click", addOrder);
     } catch (error) {
       console.log("Invalid JSON", response);
     }
@@ -144,11 +194,11 @@ form_search.onsubmit = async (e) => {
 
   getDatas("", formData.get("keyword"));
 };
-
 const pageAction = async (e) => {
+  e.preventDefault();
   // Get url from data-url attrbute within the btn_paginate anchor tag
   const url = e.target.getAttribute("data-url");
-
   // Refresh card list
   getDatas(url);
 };
+getDatas();

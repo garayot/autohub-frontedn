@@ -5,8 +5,8 @@ setRouter();
 
 // Backend URL
 const backendURL =
-  "https://ff81-2001-4455-638-9b00-9cc1-e579-c2a8-9955.ngrok-free.app/webapp-backend/public";
-// "http://webapp-backend.test";
+  // "https://ff81-2001-4455-638-9b00-9cc1-e579-c2a8-9955.ngrok-free.app/webapp-backend/public";
+  "http://webapp-backend.test";
 // Get Logged User Profile
 async function getLoggedUser() {
   // Access User Profile API Endpoint
@@ -22,7 +22,7 @@ async function getLoggedUser() {
     const json = await response.json();
 
     document.getElementById("user_logged").innerHTML =
-      json.firstname + " " + json.lastname;
+      json.first_name + " " + json.last_name;
 
     if (document.getElementById("user_id")) {
       document.getElementById("user_id").value = json.id;
