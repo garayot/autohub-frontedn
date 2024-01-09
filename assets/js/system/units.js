@@ -53,12 +53,13 @@ async function addOrder(event) {
       const errors = await response.json();
       console.error(errors);
     } else {
-      console.error("Error adding order");
+      errorNotification("Need to login to order", 5);
     }
     return;
   }
 
   const order = await response.json();
+  successNotification("Successfully ordered", 5);
   console.log("Order added successfully", order);
 }
 
@@ -173,7 +174,9 @@ async function getDatas(url = "", keyword = "") {
         element.addEventListener("click", pageAction);
       });
 
-      document.getElementById("add_order").addEventListener("click", addOrder);
+      document.querySelectorAll("#add_order").forEach((btn) => {
+        btn.addEventListener("click", addOrder);
+      });
     } catch (error) {
       console.log("Invalid JSON", response);
     }
